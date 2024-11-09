@@ -14,6 +14,8 @@
 --neutral3: 185, 41%, 84%;
 --neutral4: 189, 41%, 97%;
 --white: 179, 41%, 99%;
+
+--padding: clamp(2rem, 5vw, 4rem);
 }
 
 body {
@@ -21,3 +23,28 @@ body {
   font-size: 1.5rem;
   background-color: hsl(var(--neutral3));
 }  
+
+.wrapper {
+  display: grid;
+  place-items: center;
+  gap: 3rem;
+}
+
+.container {
+  padding: var(--padding);
+  background-color:  hsl(var(--white));
+  border-radius: 2rem;
+  box-shadow: 0 4rem 5rem hsl(var(--neutral2) / .5);
+  display: grid;
+  grid-auto-flow: column;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.display {
+  background-color: hsl(var(--text));
+  padding: var(--padding);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
