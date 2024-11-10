@@ -48,3 +48,36 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.display-group {
+  display: grid;
+  gap: var(--padding);
+}
+
+.display-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--padding);
+  align-items: center;
+  text-align: left;
+}
+
+.display-label {
+  display: grid;
+  justify-items: start;
+}
+
+.header {
+  color: hsl(var(--neutral4));
+  font-size: 1rem;
+}
+
+.unit {
+  color: hsl(var(--neutral2));
+  font-size: .8em;
+}
+
+.display-amt {
+  font-size: 2.5rem;
+  color: hsl(var(--brand));
+}
