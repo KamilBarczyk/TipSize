@@ -8,6 +8,7 @@
 
 :root {
 --brand: 172, 67%, 45%;
+--dark: 183, 100%, 5%;
 --text: 183, 100%, 15%;
 --neutral1: 186, 14%, 43%;
 --neutral2: 184, 14%, 56%;
@@ -15,7 +16,7 @@
 --neutral4: 189, 41%, 97%;
 --white: 179, 41%, 99%;
 
---padding: clamp(2rem, 5vw, 4rem);
+--padding: clamp(2rem, 4vw, 3.5rem);
 }
 
 body {
@@ -80,4 +81,45 @@ body {
 .display-amt {
   font-size: 2.5rem;
   color: hsl(var(--brand));
+}
+
+.btn {
+  font: inherit;
+  background-color: hsl(var(--brand));
+  color: hsl(var(--text));
+  border: none;
+  border-radius: .2rem;
+  padding: .3rem .8rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 
+  0 .2rem 2rem hsl(var(--dark / .6)),
+  0 0 0 -.2rem hsl(var(--text)),
+  0 0 0 -.2rem hsl(var(--neutral1));
+  transition: box-shadow 400ms cubic-bezier(0.075, 0.82,.0165, 1);
+}
+
+.btn[disabled] {
+  opacity: .2;  
+  cursor: not-allowed;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:not([disabled]):hover {
+  box-shadow: 
+  0 0 0 hsl(var(--dark / .6)),
+  0 0 0 -.2rem hsl(var(--text)),
+  0 0 0 -.2rem hsl(var(--brand));
+  background-color: hsl(var(--neutral3));
+}
+
+.btn:focus-visible {
+  box-shadow: 
+  0 .2rem 2rem hsl(var(--dark / .6)),
+  0 0 0 .2rem hsl(var(--text)),
+  0 0 0 .5rem hsl(var(--brand));
 }
