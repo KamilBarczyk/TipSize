@@ -5,9 +5,14 @@ const Form = () => {
     return (
         <div className="form">
             <div className="label-group">
-                <label className="label" htmlFor="bill">Bill</label>
-                <input type="number" id="bill" />
-                <img src={dollar} aria-hidden="true" className="icon" />
+                <div className="label-wrapper">
+                    <label className="label" htmlFor="bill">Bill</label>
+                    <p className="error"></p>
+                </div>
+                <div className="number-wrapper">
+                    <input type="text" className="number-input" id="bill" />
+                    <img src={dollar} aria-hidden="true" className="icon" />
+                </div>
             </div>
 
             <div className="tip-section">
@@ -33,17 +38,19 @@ const Form = () => {
                         <input type="radio" name="tip" value=".05" />
                         <div className="tip-btn">50%</div> 
                     </div>
-                    <input type="number" className="tip-custom" />
+                    <input type="text" className="number-input tip-custom" />
                 </div>
             </div>
 
             <div className="label-group">
                 <div className="label-wrapper">
-                    <label htmlFor="people">Number of People</label>
-                    <p>Error</p>
+                    <label className="label" htmlFor="people">Number of People</label>
+                    <p className="error"></p>
                 </div>
-                <input type="number" id="people" />
-                <img src={person} aria-hidden="true" className="icon" />
+                <div className="number-wrapper">
+                    <input type="text" className="number-input" id="people" />
+                    <img src={person} aria-hidden="true" className="icon" />
+                </div>
             </div>
         </div>
     )
