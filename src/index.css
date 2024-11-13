@@ -18,6 +18,7 @@
   --white: 179, 41%, 99%;
 
   --spacer: clamp(2rem, 4vw, 3.5rem);
+  --rounded-md: .4rem;
   --rounded-sm: .2rem;
 }
 
@@ -121,6 +122,40 @@ input[type=number] {
 .error {
   color: hsl(var(--error));
   font-size: 1rem;
+}
+
+.tip-section {
+  display: grid;
+  justify-self: start;
+  gap: .5rem;
+}
+
+.tip-amount-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .tip-amount-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tip-amount {
+  position: relative;
+}
+
+[name="tip"] {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+}
+
+.tip-btn {
+  background-color: hsl(var(--text));
+  color: hsl(var(--neutral4));
+  border-radius: var(--rounded-md);
 }
 
 .display {
