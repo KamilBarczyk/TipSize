@@ -1,16 +1,18 @@
 import dollar from "../assets/images/icon-dollar.svg"
 import person from "../assets/images/icon-person.svg"
 
-const Form = () => {
+const Form = ({ handleBillAmtInput, billAmt, handleSelectedTip, showBillAmtError}) => {
     return (
         <div className="form">
             <div className="label-group">
                 <div className="label-wrapper">
                     <label className="label" htmlFor="bill">Bill</label>
-                    <p className="error"></p>
+                    <p className="error">{
+                    showBillAmtError ? "Please enter numbers only" : ""
+                    }</p>
                 </div>
                 <div className="number-wrapper">
-                    <input type="text" className="number-input" id="bill" />
+                    <input type="text" className="number-input" id="bill" onInput={handleBillAmtInput} value={billAmt} />
                     <img src={dollar} aria-hidden="true" className="icon" />
                 </div>
             </div>
