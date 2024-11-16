@@ -11,7 +11,7 @@ const Display = () => {
                 </div>
                 <div className="display-row">
                     <div className="display-label">
-                        <p className="header">Tip Amount</p>
+                        <p className="header">Total</p>
                         <p className="unit">/ person</p>
                     </div>
                     <p className="display-amt">$0.00</p>
