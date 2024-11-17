@@ -25,6 +25,10 @@
 
 body {
   font-family: "Space Mono", monospace;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  place-items: center;
   font-size: 1.5rem;
   padding-block: var(--spacer-lg);
   background-color: hsl(var(--neutral3));
@@ -32,8 +36,6 @@ body {
 
 .wrapper {
   display: grid;
-  height: 100vh;
-  place-content: center;
   place-items: center;
   gap: 3rem;
   max-width: 900px;
