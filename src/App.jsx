@@ -2,14 +2,10 @@ import { useState } from 'react'
 import Display from './components/Display'
 import Form from './components/Form'
 
-/* TODO: Add logo here to the photo displayed at the top */
-// import TipSize from "./assets/images/TipSize.png"
-
-
 function App() {
   return (
     <div className="wrapper">
-      {/* <img src={TipSize} alt="Splitter Logo"/> */}
+      <p className="logo">TIP <br/> SIZE</p>
       <div className="container">
         <Form />
         <Display />

@@ -32,10 +32,9 @@ body {
   font-size: 1.5rem;
   padding-block: var(--spacer-lg);
   background-color: hsl(var(--neutral3));
-}  
+}
 
 .wrapper {
-  display: grid;
   place-items: center;
   gap: 3rem;
   max-width: 900px;
@@ -55,6 +54,20 @@ body {
 .from {
   display: grid;
   gap: var(--spacer)
+}
+
+p.logo {
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 2rem;
+  color: hsl(var(--text));
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2; 
+  letter-spacing: 0.4em;
+  margin: 1rem 0;
 }
 
 .label-group {
