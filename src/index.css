@@ -159,6 +159,7 @@ input[type=number] {
 
 .tip-amount {
   position: relative;
+  display: grid;
 }
 
 [name="tip"] {
