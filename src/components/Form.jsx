@@ -1,7 +1,12 @@
 import dollar from "../assets/images/icon-dollar.svg"
 import person from "../assets/images/icon-person.svg"
 
-const Form = ({ bill, setBill, people, setPeople }) => {
+const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
+
+    const handleSelectedTip = (e) => {
+        setTip(+e.target.value);
+    }
+
     return (
         <div className="form">
             <div className="label-group">
@@ -21,26 +26,26 @@ const Form = ({ bill, setBill, people, setPeople }) => {
                 <p className="label">Selected Tip %</p>
                 <div className="tip-amount-wrapper">
                     <div className="tip-amount">
-                        <input type="radio" id="input1" name="tip" value="5" />
+                        <input type="radio" onInput={handleSelectedTip} id="input1" className="tip-input" name="tip" value="5" />
                         <label className="tip-btn" htmlFor="input1">5%</label> 
                     </div>
                     <div className="tip-amount">
-                        <input type="radio" id="input2" name="tip" value="10" />
+                        <input type="radio" onInput={handleSelectedTip} id="input2" className="tip-input" name="tip" value="10" />
                         <label className="tip-btn" htmlFor="input2">10%</label> 
                     </div>
                     <div className="tip-amount">
-                        <input type="radio" id="input3" name="tip" value="15" />
+                        <input type="radio" onInput={handleSelectedTip} id="input3" className="tip-input" name="tip" value="15" />
                         <label className="tip-btn" htmlFor="input3">15%</label> 
                     </div>
                     <div className="tip-amount">
-                        <input type="radio" id="input4" name="tip" value="25" />
+                        <input type="radio" onInput={handleSelectedTip} id="input4" className="tip-input" name="tip" value="25" />
                         <label className="tip-btn" htmlFor="input4">25%</label> 
                     </div>
                     <div className="tip-amount">
-                        <input type="radio" id="input5" name="tip" value="50" />
+                        <input type="radio" onInput={handleSelectedTip} id="input5" className="tip-input" name="tip" value="50" />
                         <label className="tip-btn" htmlFor="input5">50%</label> 
                     </div>
-                    <input type="text" className="number-input tip-custom" />
+                    <input type="text" name="tip" onInput={handleSelectedTip}className="number-input tip-custom" />
                 </div>
             </div>
 
