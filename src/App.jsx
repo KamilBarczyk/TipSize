@@ -12,10 +12,14 @@ function App() {
   useEffect(() => {
     console.table({bill, people, tip})
     if(bill > 0 && people > 0 && tip > 0){
-      setCalculatedTip(bill * (tip / 100) / people);
+      setCalculatedTip(bill * (tip / 100));
       setTotal(calculatedTip + bill)
     }
   }, [bill, people, tip, calculatedTip])
+
+  const handleResetBtn = (e) => {
+    console.log('reseted')
+  }
 
   return (
     <div className="wrapper">
@@ -29,7 +33,12 @@ function App() {
         people={people}
         setPeople={setPeople}
         />
-        <Display />
+        <Display 
+        total={total}
+        people={people}
+        calculatedTip={calculatedTip}
+        handleResetBtn={handleResetBtn}
+        />
       </div>
     </div>
   )
