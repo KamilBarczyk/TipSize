@@ -1,4 +1,4 @@
-const Display = ({calculatedTip, total, people}) => {
+const Display = ({calculatedTip, total, people, handleResetBtn}) => {
     const returnCurrencyAmt = (amt) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amt);
 
     return (
@@ -19,7 +19,9 @@ const Display = ({calculatedTip, total, people}) => {
                     <p className="display-amt">{returnCurrencyAmt(`${total ? total/people : "0"}`)}</p>
                 </div>
             </div>
-            <button className="btn" disabled>Reset</button>
+            {
+                total ? (<button className="btn" onClick={handleResetBtn}>Reset</button>) : (<button className="btn" disabled>Reset</button>)
+            }
         </div>
     )
 }
