@@ -10,7 +10,6 @@ function App() {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    console.table({bill, people, tip})
     if(bill > 0 && people > 0 && tip > 0){
       setCalculatedTip(bill * (tip / 100));
       setTotal(calculatedTip + bill)
@@ -18,7 +17,11 @@ function App() {
   }, [bill, people, tip, calculatedTip])
 
   const handleResetBtn = (e) => {
-    console.log('reseted')
+    setBill("");
+    setTip("");
+    setPeople("");
+    setCalculatedTip(0);
+    setTotal(0);
   }
 
   return (
