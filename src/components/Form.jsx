@@ -12,9 +12,6 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
             <div className="label-group">
                 <div className="label-wrapper">
                     <label className="label" htmlFor="bill">Bill</label>
-                    {/* <p className="error">{
-                    showBillAmtError ? "Please enter numbers only" : ""
-                    }</p> */}
                 </div>
                 <div className="number-wrapper">
                     <input type="number" className="number-input" id="bill" onInput={(e) => setBill(+e.target.value)} />
@@ -45,19 +42,22 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                         <input type="radio" onInput={handleSelectedTip} id="input5" className="tip-input" name="tip" value="50" />
                         <label className="tip-btn" htmlFor="input5">50%</label> 
                     </div>
-                    <input type="text" name="tip" onInput={handleSelectedTip}className="number-input tip-custom" />
+                    <div className="custom-wrapper">
+                        <input type="text" onInput={handleSelectedTip} id="custom" name="tip" className="number-input tip-custom" placeholder="Custom"/>
+                        <label htmlFor="custom" className="tip-custom-label">Custom</label>
+                    </div>
                 </div>
             </div>
 
             <div className="label-group">
                 <div className="label-wrapper">
                     <label className="label" htmlFor="people">Number of People</label>
-                    {/* <p className="error">{
-                    showPeepsError ? "Please enter numbers only" : ""
-                    }</p> */}
+                    <p className="error">{
+                    people === 0 ? "Can't be zero" : ""
+                    }</p>
                 </div>
                 <div className="number-wrapper">
-                    <input type="number" className="number-input" id="people" onInput={(e) => setPeople(+e.target.value)}/>
+                    <input type="number" className={`number-input ${people === 0 ? 'number-error' : ""}`} id="people" onInput={(e) => setPeople(+e.target.value)}/>
                     <img src={person} aria-hidden="true" className="icon" />
                 </div>
             </div>
