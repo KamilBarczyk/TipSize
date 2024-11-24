@@ -4,7 +4,7 @@ import person from "../assets/images/icon-person.svg"
 const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
 
     const handleSelectedTip = (e) => {
-        setTip(+e.target.value);  
+        setTip(+e.target.value);
     }
 
     return (
