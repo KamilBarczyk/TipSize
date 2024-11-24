@@ -14,7 +14,7 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                     <label className="label" htmlFor="bill">Bill</label>
                 </div>
                 <div className="number-wrapper">
-                    <input type="number" className="number-input" id="bill" onInput={(e) => setBill(+e.target.value)} />
+                    <input type="number" className="number-input" id="bill" onInput={(e) => setBill(+e.target.value)} value={bill}/>
                     <img src={dollar} aria-hidden="true" className="icon" />
                 </div>
             </div>
@@ -43,7 +43,7 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                         <label className="tip-btn" htmlFor="input5">50%</label> 
                     </div>
                     <div className="custom-wrapper">
-                        <input type="text" onInput={handleSelectedTip} id="custom" name="tip" className="number-input tip-custom" placeholder="Custom"/>
+                        <input type="number" onInput={handleSelectedTip} id="custom" name="tip" className="number-input tip-custom" placeholder="Custom"/>
                         <label htmlFor="custom" className="tip-custom-label">Custom</label>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                     }</p>
                 </div>
                 <div className="number-wrapper">
-                    <input type="number" className={`number-input ${people === 0 ? 'number-error' : ""}`} id="people" onInput={(e) => setPeople(+e.target.value)}/>
+                    <input type="number" className={`number-input ${people === 0 ? 'number-error' : ""}`} id="people" onInput={(e) => setPeople(+e.target.value)} value={people}/>
                     <img src={person} aria-hidden="true" className="icon" />
                 </div>
             </div>
