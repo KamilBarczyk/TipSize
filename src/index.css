@@ -23,6 +23,11 @@
   --rounded-sm: .2rem;
 }
 
+::selection {
+  background-color: hsl(var(--brand));
+  color: hsl(var(--white));
+}
+
 body {
   font-family: "Space Mono", monospace;
   height: 100vh;
