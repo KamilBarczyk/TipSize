@@ -1,50 +1,75 @@
-# React + TypeScript + Vite
+# TipSize
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TipSize** is a responsive and interactive tip calculator application built with **React** and **Vite**. Designed for a seamless user experience, it allows users to quickly calculate tip amounts and the total cost per person with customizable options.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Features**
+- **Dynamic Calculations**: 
+  - Automatically calculates the tip amount and total per person as the user inputs values.
+- **Preset and Custom Tip Selection**: 
+  - Choose from preset tip percentages (5%, 10%, 15%, 25%, 50%) or enter a custom tip percentage.
+- **Error Handling**:
+  - Displays an error message if the "Number of People" input is zero.
+- **State Reset**:
+  - A "Reset" button to clear all inputs and selections.
+- **Responsive Design**:
+  - Optimized for desktop and mobile devices.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## **Technologies Used**
+- **React**:  
+  Component-based architecture for better reusability and maintainability.
+- **Vite**:  
+  A fast development environment for building modern web applications.
+- **JavaScript (ES6+)**:  
+  Logic implementation for state management and calculations.
+- **CSS**:  
+  Custom styling for a clean and responsive user interface.
+- **pnpm**:  
+  Efficient package management and project setup.
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## **Screenshots**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### **Default View**
+The main screen of the application with preset tip options and input fields for bill and number of people.
+![Default View](./src/assets/default-view.png)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### **Error State**
+Displays a user-friendly error message when the "Number of People" is set to zero.
+![Error State](./src/assets/error-state.png)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### **Custom Tip Entry**
+Allows users to input a custom percentage for tip calculation.
+![Custom Tip Entry](./src/assets/custom-tip-entry.png)
+
+---
+
+## **Getting Started**
+
+### **Prerequisites**
+- **pnpm** package manager installed. If not, install it using:
+  ```bash
+  npm install -g pnpm
+  
+### Installation and Local Development
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/KamilBarczyk/TipSize
+
+2. **Navigate to the project folder:**
+   ```bash
+   cd TipSize
+
+3. **Instal dependencies:**
+   ```bash
+    pnpm install
+
+4. **Run the project:**
+   ```bash
+   pnpm run dev
+   
+The app will be available at http://localhost:3000.
