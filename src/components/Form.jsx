@@ -8,7 +8,7 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople, reset }) => {
     const handleSelectedTip = (e) => {
         const { id, value } = e.target;
         setSelectedTip(id);
-        setTip(+value);
+        setTip(+value || "");
     };
 
     const handleReset = () => {
@@ -30,8 +30,8 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople, reset }) => {
                         type="number"
                         className="number-input"
                         id="bill"
-                        onInput={(e) => setBill(+e.target.value)}
-                        value={bill}
+                        onChange={(e) => setBill(e.target.value === "" ? "" : +e.target.value)}
+                        value={bill === "" ? "" : bill}
                     />
                     <img src={dollar} aria-hidden="true" className="icon" />
                 </div>
@@ -58,14 +58,15 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople, reset }) => {
                         <input
                             type="number"
                             onChange={(e) => {
-                                setTip(+e.target.value);
+                                const value = e.target.value;
+                                setTip(value === "" ? "" : +value);
                                 setSelectedTip("custom");
                             }}
                             id="custom"
                             name="tip"
                             className="number-input tip-custom"
                             placeholder="Custom"
-                            value={selectedTip === "custom" ? tip : ""}
+                            value={selectedTip === "custom" ? (tip === "" ? "" : tip) : ""}
                         />
                         <label htmlFor="custom" className="tip-custom-label">Custom</label>
                     </div>
@@ -82,8 +83,8 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople, reset }) => {
                         type="number"
                         className={`number-input ${people === 0 ? "number-error" : ""}`}
                         id="people"
-                        onInput={(e) => setPeople(+e.target.value)}
-                        value={people}
+                        onChange={(e) => setPeople(e.target.value === "" ? "" : +e.target.value)}
+                        value={people === "" ? "" : people}
                     />
                     <img src={person} aria-hidden="true" className="icon" />
                 </div>
