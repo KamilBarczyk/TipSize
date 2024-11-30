@@ -18,12 +18,6 @@ importers:
       '@eslint/js':
         specifier: ^9.13.0
         version: 9.14.0
-      '@types/react':
-        specifier: ^18.3.12
-        version: 18.3.12
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.1
       '@vitejs/plugin-react':
         specifier: ^4.3.3
         version: 4.3.3(vite@5.4.10)
@@ -42,9 +36,6 @@ importers:
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
-      typescript:
-        specifier: ~5.6.3
-        version: 5.6.3
       typescript-eslint:
         specifier: ^8.11.0
         version: 8.13.0(eslint@9.14.0)(typescript@5.6.3)
@@ -467,15 +458,6 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/prop-types@15.7.13':
-    resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
-
-  '@types/react-dom@18.3.1':
-    resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
-
-  '@types/react@18.3.12':
-    resolution: {integrity: sha512-D2wOSq/d6Agt28q7rSI3jhU7G6aiuzljDGZ2hTZHIkrTLUI+AF3WMeKkEZ9nN2fkBAlcktT6vcZjDFiIhMYEQw==}
-
   '@typescript-eslint/eslint-plugin@8.13.0':
     resolution: {integrity: sha512-nQtBLiZYMUPkclSeC3id+x4uVd1SGtHuElTxL++SfP47jR0zfkZBJHc+gL4qPsgTuypz0k8Y2GheaDYn6Gy3rg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -604,9 +586,6 @@ packages:
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
-
-  csstype@3.1.3:
-    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
   debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
@@ -1408,17 +1387,6 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/prop-types@15.7.13': {}
-
-  '@types/react-dom@18.3.1':
-    dependencies:
-      '@types/react': 18.3.12
-
-  '@types/react@18.3.12':
-    dependencies:
-      '@types/prop-types': 15.7.13
-      csstype: 3.1.3
-
   '@typescript-eslint/eslint-plugin@8.13.0(@typescript-eslint/parser@8.13.0(eslint@9.14.0)(typescript@5.6.3))(eslint@9.14.0)(typescript@5.6.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.1
@@ -1576,8 +1544,6 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
-
-  csstype@3.1.3: {}
 
   debug@4.3.7:
     dependencies:
