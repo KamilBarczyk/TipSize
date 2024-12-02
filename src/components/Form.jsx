@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import dollar from "../assets/images/icon-dollar.svg";
 import person from "../assets/images/icon-person.svg";
 
-const Form = ({ bill, setBill, tip, setTip, people, setPeople, reset }) => {
+const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
     const [selectedTip, setSelectedTip] = useState(null);
 
     const handleSelectedTip = (e) => {
@@ -11,13 +11,11 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople, reset }) => {
         setTip(+value || "");
     };
 
-    const handleReset = () => {
-        setBill("");
-        setTip("");
-        setPeople("");
-        setSelectedTip(null);
-        reset();
-    };
+    React.useEffect(() => {
+        if (bill === "" && tip === "" && people === "") {
+            setSelectedTip(null);
+        }
+    }, [bill, tip, people]);
 
     return (
         <div className="form">

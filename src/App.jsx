@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Display from './components/Display'
 import Form from './components/Form'
 
@@ -9,15 +9,15 @@ function App() {
   const [calculatedTip, setCalculatedTip] = useState(0);
   const [total, setTotal] = useState(0);
 
-  const reset = () => {
-      setBill("");
-      setTip("");
-      setPeople("");
-      setCalculatedTip(0);
-      setTotal(0);
-  };
+  const handleResetBtn = () => {
+    setBill("");
+    setTip("");
+    setPeople("");
+    setTotal(0);
+    setCalculatedTip(0);
+};
 
-  useEffect(() => {
+  React.useEffect(() => {
       if (bill > 0 && people > 0 && tip > 0) {
           setCalculatedTip(bill * (tip / 100));
           setTotal(bill + calculatedTip);
@@ -35,13 +35,13 @@ function App() {
                   setTip={setTip}
                   people={people}
                   setPeople={setPeople}
-                  reset={reset}
+                  reset={handleResetBtn}
               />
               <Display
                   total={total}
                   people={people}
                   calculatedTip={calculatedTip}
-                  handleResetBtn={reset}
+                  handleResetBtn={handleResetBtn}
               />
           </div>
       </div>
