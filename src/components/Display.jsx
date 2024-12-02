@@ -19,9 +19,11 @@ const Display = ({calculatedTip, total, people, handleResetBtn}) => {
                     <p className="display-amt">{returnCurrencyAmt(`${total ? total/people : "0"}`)}</p>
                 </div>
             </div>
-            {
-                total ? (<button className="btn" onClick={handleResetBtn}>Reset</button>) : (<button className="btn" disabled>Reset</button>)
-            }
+            {total ? (
+                <button className="btn" onClick={handleResetBtn}>Reset</button>
+            ) : (
+                <button className="btn" disabled>Reset</button>
+            )}
         </div>
     )
 }
