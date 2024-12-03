@@ -8,7 +8,7 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
     const handleSelectedTip = (e) => {
         const { id, value } = e.target;
         setSelectedTip(id);
-        setTip(+value || "");
+        setTip(Number(value));
     };
 
     React.useEffect(() => {
@@ -29,7 +29,7 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                         className="number-input"
                         id="bill"
                         onChange={(e) => setBill(e.target.value === "" ? "" : +e.target.value)}
-                        value={bill === "" ? "" : bill}
+                        value={bill || ""}
                     />
                     <img src={dollar} aria-hidden="true" className="icon" />
                 </div>
