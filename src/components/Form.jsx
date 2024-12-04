@@ -72,7 +72,7 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
             </div>
 
             <div className="label-group">
-                <div className="label-wrapper">
+                <div className={`label-wrapper ${people === 0 ? "error" : ""}`}>
                     <label className="label" htmlFor="people">Number of People</label>
                     <p className="error">{people === 0 ? "Can't be zero" : ""}</p>
                 </div>
