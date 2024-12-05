@@ -16,7 +16,6 @@
   --neutral3: 185, 41%, 84%;
   --neutral4: 189, 41%, 97%;
   --white: 179, 41%, 99%;
-
   --spacer: clamp(2rem, 4vw, 3.5rem);
   --spacer-lg: clamp(4rem, 7vw, 6.5rem);
   --rounded-md: .4rem;
@@ -92,7 +91,6 @@ p.logo {
 
 .tip-custom::placeholder {
   opacity: 0;
-  background: red;
 }
 
 .tip-custom-label {
@@ -107,7 +105,6 @@ p.logo {
 .tip-custom:not(:placeholder-shown) + .tip-custom-label {
   opacity: 0;
 }
-
 
 .number-wrapper {
   position: relative;
