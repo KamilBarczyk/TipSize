@@ -28,7 +28,13 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                         type="number"
                         className="number-input"
                         id="bill"
-                        onChange={(e) => setBill(e.target.value === "" ? "" : +e.target.value)}
+                        min="0"
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            if (value === "" || +value >= 0) {
+                                setBill(value === "" ? "" : +value); 
+                            }
+                        }}
                         value={bill || ""}
                     />
                     <img src={dollar} aria-hidden="true" className="icon" />
@@ -55,10 +61,13 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                     <div className="custom-wrapper">
                         <input
                             type="number"
+                            min="0"
                             onChange={(e) => {
                                 const value = e.target.value;
-                                setTip(value === "" ? "" : +value);
-                                setSelectedTip("custom");
+                                if (value === "" || +value >= 0) {
+                                    setTip(value === "" ? "" : +value);
+                                    setSelectedTip("custom");
+                                }
                             }}
                             id="custom"
                             name="tip"
@@ -81,7 +90,13 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                         type="number"
                         className={`number-input ${people === 0 ? "number-error" : ""}`}
                         id="people"
-                        onChange={(e) => setPeople(e.target.value === "" ? "" : +e.target.value)}
+                        min="0"
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            if (value === "" || +value >= 0) {
+                                setPeople(value === "" ? "" : +value);
+                            }
+                        }}
                         value={people === "" ? "" : people}
                     />
                     <img src={person} aria-hidden="true" className="icon" />
