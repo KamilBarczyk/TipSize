@@ -24,19 +24,21 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                     <label className="label" htmlFor="bill">Bill</label>
                 </div>
                 <div className="number-wrapper">
-                    <input
-                        type="number"
-                        className="number-input"
-                        id="bill"
-                        min="0"
-                        onChange={(e) => {
-                            const value = e.target.value;
-                            if (value === "" || +value >= 0) {
-                                setBill(value === "" ? "" : +value); 
-                            }
-                        }}
-                        value={bill || ""}
-                    />
+                <input
+                    type="number"
+                    className="number-input"
+                    id="bill"
+                    onKeyDown={(e) => {
+                        if (e.key === "-" || e.key === "e") e.preventDefault();
+                    }}
+                    onChange={(e) => {
+                        const value = e.target.value;
+                        if (value === "" || +value >= 0) {
+                            setBill(value === "" ? "" : +value);
+                        }
+                    }}
+                    value={bill || ""}
+                />
                     <img src={dollar} aria-hidden="true" className="icon" />
                 </div>
             </div>
@@ -59,22 +61,24 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                         </div>
                     ))}
                     <div className="custom-wrapper">
-                        <input
-                            type="number"
-                            min="0"
-                            onChange={(e) => {
-                                const value = e.target.value;
-                                if (value === "" || +value >= 0) {
-                                    setTip(value === "" ? "" : +value);
-                                    setSelectedTip("custom");
-                                }
-                            }}
-                            id="custom"
-                            name="tip"
-                            className="number-input tip-custom"
-                            placeholder="Custom"
-                            value={selectedTip === "custom" ? (tip === "" ? "" : tip) : ""}
-                        />
+                    <input
+                        type="number"
+                        onKeyDown={(e) => {
+                            if (e.key === "-" || e.key === "e") e.preventDefault();
+                        }}
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            if (value === "" || +value >= 0) {
+                                setTip(value === "" ? "" : +value);
+                                setSelectedTip("custom");
+                            }
+                        }}
+                        id="custom"
+                        name="tip"
+                        className="number-input tip-custom"
+                        placeholder="Custom"
+                        value={selectedTip === "custom" ? (tip === "" ? "" : tip) : ""}
+                    />
                         <label htmlFor="custom" className="tip-custom-label">Custom</label>
                     </div>
                 </div>
@@ -86,19 +90,16 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                     <p className="error">{people === 0 ? "Can't be zero" : ""}</p>
                 </div>
                 <div className="number-wrapper">
-                    <input
-                        type="number"
-                        className={`number-input ${people === 0 ? "number-error" : ""}`}
-                        id="people"
-                        min="0"
-                        onChange={(e) => {
-                            const value = e.target.value;
-                            if (value === "" || +value >= 0) {
-                                setPeople(value === "" ? "" : +value);
-                            }
-                        }}
-                        value={people === "" ? "" : people}
-                    />
+                <input
+                    type="number"
+                    className={`number-input ${people === 0 ? "number-error" : ""}`}
+                    id="people"
+                    onKeyDown={(e) => {
+                        if (e.key === "-" || e.key === "e") e.preventDefault();
+                    }}
+                    onChange={(e) => setPeople(e.target.value === "" ? "" : +e.target.value)}
+                    value={people === "" ? "" : people}
+                />
                     <img src={person} aria-hidden="true" className="icon" />
                 </div>
             </div>
