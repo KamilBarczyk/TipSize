@@ -68,7 +68,7 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                         }}
                         onChange={(e) => {
                             const value = e.target.value;
-                            if (value === "" || +value >= 0) {
+                            if (value === "" || +value > 0) {
                                 setTip(value === "" ? "" : +value);
                                 setSelectedTip("custom");
                             }
@@ -97,7 +97,17 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                     onKeyDown={(e) => {
                         if (e.key === "-" || e.key === "e") e.preventDefault();
                     }}
-                    onChange={(e) => setPeople(e.target.value === "" ? "" : +e.target.value)}
+                    onChange={(e) => {
+                        let value = e.target.value;
+                        if (value === "0") {
+                            setPeople("0");
+                        } else if (value && value[0] === "0") {
+                            value = value.replace(/^0+/, "");
+                            setPeople(value);
+                        } else {
+                            setPeople(value === "" ? "" : +value);
+                        }
+                    }}
                     value={people === "" ? "" : people}
                 />
                     <img src={person} aria-hidden="true" className="icon" />
