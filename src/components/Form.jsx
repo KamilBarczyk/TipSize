@@ -61,25 +61,24 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                         </div>
                     ))}
                     <div className="custom-wrapper">
-                    <input
-                        type="number"
-                        onKeyDown={(e) => {
-                            if (e.key === "-" || e.key === "e") e.preventDefault();
-                        }}
-                        onChange={(e) => {
-                            const value = e.target.value;
-                            if (value === "" || +value > 0) {
-                                setTip(value === "" ? "" : +value);
-                                setSelectedTip("custom");
-                            }
-                        }}
-                        id="custom"
-                        name="tip"
-                        className="number-input tip-custom"
-                        placeholder="Custom"
-                        value={selectedTip === "custom" ? (tip === "" ? "" : tip) : ""}
-                    />
-                        <label htmlFor="custom" className="tip-custom-label">Custom</label>
+w                        <input
+                            type="number"
+                            onKeyDown={(e) => {
+                                if (e.key === "-" || e.key === "e") e.preventDefault();
+                            }}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                if (value === "" || +value > 0) {
+                                    setTip(value === "" ? "" : +value);
+                                    setSelectedTip("custom");
+                                }
+                            }}
+                            id="custom"
+                            name="tip"
+                            className="number-input tip-custom"
+                            placeholder="Custom"
+                            value={selectedTip === "custom" ? (tip === "" ? "" : tip) : ""}
+                        />
                     </div>
                 </div>
             </div>
