@@ -90,20 +90,7 @@ p.logo {
 }
 
 .tip-custom::placeholder {
-  opacity: 0;
-}
-
-.tip-custom-label {
-  position: absolute;
-  top: .2rem;
-  right: .2rem;
-  max-width: 90%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.tip-custom:not(:placeholder-shown) + .tip-custom-label {
-  opacity: 0;
+  opacity: 1;
 }
 
 .number-wrapper {
