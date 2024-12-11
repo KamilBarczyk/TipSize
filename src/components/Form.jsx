@@ -61,7 +61,7 @@ const Form = ({ bill, setBill, tip, setTip, people, setPeople }) => {
                         </div>
                     ))}
                     <div className="custom-wrapper">
-w                        <input
+                        <input
                             type="number"
                             onKeyDown={(e) => {
                                 if (e.key === "-" || e.key === "e") e.preventDefault();
