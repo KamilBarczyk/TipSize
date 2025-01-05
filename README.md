@@ -67,7 +67,7 @@ Allows users to input a custom percentage for tip calculation.
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/KamilBarczyk/TipSize
+   git clone https://github.com/KamilBarczyk/TipSize.git
    ```
 
 2. **Navigate to the project folder:**
